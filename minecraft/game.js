@@ -8,9 +8,15 @@ import {update as updateMoon , draw as drawMoon } from './moon.js'
 // const gameBoard = document.getElementById('game-board')
 const gameBoard = document.querySelector('#game-board')
 
+// console.log(resett);
+let arrayRemoves = []
+// const rockUpdate = document.querySelector('.rock')
+
+// const divRock = document.querySelector('.rock')
+// console.log(rockUpdate);
 
 function main(currentTime){
-    window.requestAnimationFrame(main)
+    // window.requestAnimationFrame(main)
     // const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
     // if (secondsSinceLastRender < 1 / SNAKE_SPEED) return 
     
@@ -23,7 +29,8 @@ function main(currentTime){
 window.requestAnimationFrame(main)
 
 function update(){
-    // updateGround()
+    gameBoard.innerHTML = ''
+    updateRock(gameBoard)
     // updateTree()
 }
 
@@ -32,6 +39,11 @@ function draw(){
     drawGround(gameBoard)
     drawTree(gameBoard)
     drawTrunk(gameBoard)
-    drawRock(gameBoard)
+    drawRock(gameBoard, arrayRemoves)
     drawMoon(gameBoard)
 }
+
+const resett = document.querySelector('input')
+resett.addEventListener('click', () => {
+    location.reload();
+})
