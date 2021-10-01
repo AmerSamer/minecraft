@@ -1,8 +1,8 @@
 export const SNAKE_SPEED = 1
 const rockBody = [
-    { x: 5 , y: 2}, { x: 5 , y: 3}, { x: 5 , y: 4},
-    { x: 6 , y: 2}, { x: 6 , y: 3}, { x: 6 , y: 4},
-    { x: 4 , y: 3}
+    { x: 13 , y: 3}, { x: 13 , y: 4},{ x: 13 , y: 5}, { x: 13 , y: 6}, 
+    { x: 12 , y: 3}, { x: 12 , y: 4}, { x: 12 , y: 5},
+    { x: 11 , y: 4}
 ]
 
 export function update(){
