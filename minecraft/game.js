@@ -6,11 +6,9 @@ import { draw as drawSky } from './sky.js'
 
 const gameBoard = document.querySelector('#game-board')
 let toolsArr = [{ toolsName: 'axe', bool: false }, { toolsName: 'pickaxe', bool: false }, { toolsName: 'shovel', bool: false }, { toolsName: '', bool: false }]
-
 let arrayRemoves = []
 
-
-window.requestAnimationFrame(draw())
+window.requestAnimationFrame(draw)
 
 function draw() {
     gameBoard.innerHTML = ''
@@ -20,6 +18,7 @@ function draw() {
     drawRock(gameBoard, arrayRemoves, toolsArr)
     drawSky(gameBoard, arrayRemoves, toolsArr)
 }
+
 const resett = document.querySelector('input')
 resett.addEventListener('click', () => {
     location.reload();
