@@ -9,7 +9,7 @@ body{
 }
 
 #game-board{
-    background: rgb(4, 4, 32);
+    background: url('./images/11.jpg') no-repeat center center;
     height: 100vmin;
     width: 150vmin;
     display: grid;
@@ -17,44 +17,58 @@ body{
     grid-template-columns: repeat(20, 1fr);
     
 }
+
 #tools-board{
     background: black;
     height: 100vmin;
     width: 35vmin;
-    /* display: grid;
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-columns: repeat(3, 1fr); */
 }
 
 #axe{
-    background: url('./images/axe.png') no-repeat  center;
+    background: url('./images/pickaxe.png') no-repeat  center;
     height: 15vmin;
     width: 15vmin;
     margin: 20% 32%;
-    border: white 2px solid;
+    border: white 3px solid;
+}
+#axe:hover{
+    border: rgb(15, 4, 83) 3px solid;
 }
 #pickaxe{
-    background: url('./images/pickaxe.png') no-repeat center ;
+    background: url('./images/axe.png') no-repeat center ;
     height: 15vmin;
     width: 15vmin;
     margin: 20% 32%;
-    border: white 2px solid;
+    border: white 3px solid;
+}
+#pickaxe:hover{
+    border: rgb(15, 4, 83) 3px solid;
 }
 #shovel{
     background: url('./images/shovel.png') no-repeat center ;
     height: 15vmin;
     width: 15vmin;
-    margin: 10% 32%;
+    margin: 20% 32%;
+    border: white 3px solid;
+}
+#shovel:hover{
+    border: rgb(15, 4, 83) 3px solid;
+}
+#store{
+    height: 12.5vmin;
+    width: 12.5vmin;
+    margin: 30% 35%;
     border: white 2px solid;
+    color: white;
+    text-align: center;
+}
+#store:hover{
+    border: rgb(10, 88, 41) 2px solid;
 }
 #start-board{
     background: black;
     height: 100vmin;
     width: 35vmin;
-    /* display: grid;
-    grid-template-rows: repeat(10, 1fr);
-    grid-template-columns: repeat(10, 1fr); */
-    
 }
 .welcome{
     font-size: 40px;
@@ -67,61 +81,49 @@ body{
     color: #333;
 }
 input{
-    background: rgb(41, 35, 4);
+    background: none;
     color: #fff;
     margin: 20% 33%;
     width: 5rem;
     height: 2rem;
     font-weight: 600;
     font-size: 20px;
-
+    font-family: serif;
+}
+input:hover{
+    border: rgb(124, 3, 3) 3px solid;
 }
 .ground{
     background: url('./images/soil.jpg') no-repeat;
-    /* border: 0.25vmin solid black */
+}
+.ground:hover{
+    border: 0.01vmin solid black
 }
 .tree{
     background: url('./images/tree.jpg') no-repeat center center;
-    /* border: 0.25vmin solid black */
+}
+.tree:hover{
+    border: 0.01vmin solid black
 }
 .trunk{
     background: url('./images/trunk.jpg') no-repeat center center;
-    /* border: 0.25vmin solid black */
+}
+.trunk:hover{
+    border: 0.01vmin solid black
 }
 .rock{
     background: url('./images/rock.jpg') no-repeat center center;
-    /* border: 0.25vmin solid black */
-
+}
+.rock:hover{
+    border: 0.01vmin solid black
 }
 
 .moon{
     background: url('./images/moon.jpg') no-repeat center center;
-    /* border: 0.25vmin solid black */
 }
-
-/* .parent {
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    height: 100vmin;
-    width: 100vmax;
-    }
-    
-.div1 { 
-    grid-area: 1 / 1 / 2 / 3;
-    background: black;
-    
- }
-.div2 { 
-    grid-area: 1 / 2 / 2 / 3; 
-    background: rgb(73, 181, 231);
-    display: grid;
-    grid-template-columns: repeat(21, 1fr);
-    grid-template-rows: repeat(21, 1fr);
+.sky{
+    background: url('./images/11.jpg') no-repeat;
 }
-.div3 { 
-    grid-area: 1 / 3 / 2 / 3; 
-    background: black;
-} */
+.sky:hover{
+    border: 0.01vmin solid black
+}

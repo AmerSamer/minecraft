@@ -5,32 +5,16 @@ const rockBody = [
     { x: 11, y: 4 }
 ]
 
-
-// rockBody.addEventListener("click", function(){ 
-//     alert("Hello World!");
-//  });
-
-export function update(gameBoard) {
-    // console.log('update snake');
-    //     let rockUpdate = document.querySelector('.rock')
-    // console.log(gameBoard);
-    // gameBoard.addEventListener("click", function(){ 
-
-    //     alert('he')
-    //  });
-    //  console.log(gameBoard.classList.addEventListener);
-}
-
-export function draw(gameBoard, arrayRemoves,toolsArr) {
-    // console.log('draw snake');
+export function draw(gameBoard, arrayRemoves, toolsArr) {
     let axe = document.querySelector('#axe')
-    axe.addEventListener('click', ()=> {
-    if(toolsArr[0].toolsName == axe.getAttribute('id'))
-        toolsArr[0].bool= true
-        toolsArr[1].bool= false
-        toolsArr[2].bool= false
+    axe.addEventListener('click', () => {
+        if (toolsArr[0].toolsName == axe.getAttribute('id'))
+            console.log('ff');
+        toolsArr[0].bool = true
+        toolsArr[1].bool = false
+        toolsArr[2].bool = false
+        toolsArr[3].bool = false
     })
-// console.log(toolsArr);
     rockBody.forEach(segment => {
         const rockElement = document.createElement('div')
         rockElement.style.gridRowStart = segment.x
@@ -39,15 +23,20 @@ export function draw(gameBoard, arrayRemoves,toolsArr) {
         gameBoard.appendChild(rockElement)
 
         let rockUpdate = rockElement
-        // console.log(rockUpdate);
+
         rockUpdate.addEventListener('click', () => {
-            if(toolsArr[0].bool){
-                arrayRemoves.push(rockUpdate)
+            console.log('ggg');
+            if (toolsArr[0].bool) {
+
+                arrayRemoves.unshift(rockUpdate.getAttribute('class'))
                 rockUpdate.remove()
+                let store = document.querySelector('#store')
+                if (arrayRemoves[0] == rockUpdate.getAttribute('class')) {
+                    store.setAttribute('class', 'rock')
+                }
             }
         })
     })
-    
 }
 
 
