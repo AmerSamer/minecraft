@@ -24,9 +24,15 @@ export function update(){
     // console.log('update snake');
 }
 
-export function draw(gameBoard){
+export function draw(gameBoard, arrayRemoves,toolsArr){
     // console.log('draw snake');
-
+    let pickaxe = document.querySelector('#pickaxe')
+    pickaxe.addEventListener('click', ()=> {
+    if(toolsArr[1].toolsName == pickaxe.getAttribute('id'))
+        toolsArr[0].bool= false
+        toolsArr[1].bool= true
+        toolsArr[2].bool= false
+    })
     treeBody.forEach(segment => {
         const treeElement = document.createElement('div')
         treeElement.style.gridRowStart = segment.x
@@ -34,6 +40,13 @@ export function draw(gameBoard){
         treeElement.classList.add('tree')
         gameBoard.appendChild(treeElement)
     
+        let treeUpdate = treeElement
+        treeUpdate.addEventListener('click', () => {
+            if(toolsArr[1].bool){
+                arrayRemoves.push(treeUpdate)
+                treeUpdate.remove()
+            }
+        })
     })
 
 }

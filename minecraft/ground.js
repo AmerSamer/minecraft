@@ -38,9 +38,17 @@ export function update(){
     // console.log('update snake');
 }
 
-export function draw(gameBoard){
+export function draw(gameBoard, arrayRemoves,toolsArr){
     // console.log('draw snake');
-
+    let shovel = document.querySelector('#shovel')
+    shovel.addEventListener('click', ()=> {
+    if(toolsArr[2].toolsName == shovel.getAttribute('id'))
+        toolsArr[0].bool= false
+        toolsArr[1].bool= false
+        toolsArr[2].bool= true
+    })
+// console.log(toolsArr[0].bool);
+    // let ground = false
     groundBody.forEach(segment => {
         const groundElement = document.createElement('div')
         groundElement.style.gridRowStart = segment.x
@@ -48,6 +56,13 @@ export function draw(gameBoard){
         groundElement.classList.add('ground')
         gameBoard.appendChild(groundElement)
     
+        let groundUpdate = groundElement
+        groundUpdate.addEventListener('click', () => {
+            if(toolsArr[2].bool){
+                arrayRemoves.push(groundUpdate)
+                groundUpdate.remove()
+            }
+        })
     })
 
 }

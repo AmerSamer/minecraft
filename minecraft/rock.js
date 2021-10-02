@@ -21,9 +21,16 @@ export function update(gameBoard) {
     //  console.log(gameBoard.classList.addEventListener);
 }
 
-export function draw(gameBoard, arrayRemoves) {
+export function draw(gameBoard, arrayRemoves,toolsArr) {
     // console.log('draw snake');
-
+    let axe = document.querySelector('#axe')
+    axe.addEventListener('click', ()=> {
+    if(toolsArr[0].toolsName == axe.getAttribute('id'))
+        toolsArr[0].bool= true
+        toolsArr[1].bool= false
+        toolsArr[2].bool= false
+    })
+// console.log(toolsArr);
     rockBody.forEach(segment => {
         const rockElement = document.createElement('div')
         rockElement.style.gridRowStart = segment.x
@@ -34,10 +41,11 @@ export function draw(gameBoard, arrayRemoves) {
         let rockUpdate = rockElement
         // console.log(rockUpdate);
         rockUpdate.addEventListener('click', () => {
-            arrayRemoves.push(rockUpdate)
-            rockUpdate.remove()
-            // console.log(arrayRemoves);
-    })
+            if(toolsArr[0].bool){
+                arrayRemoves.push(rockUpdate)
+                rockUpdate.remove()
+            }
+        })
     })
     
 }

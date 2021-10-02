@@ -7,6 +7,8 @@ import {update as updateMoon , draw as drawMoon } from './moon.js'
 // let lastRenderTime = 0
 // const gameBoard = document.getElementById('game-board')
 const gameBoard = document.querySelector('#game-board')
+// const axe = document.querySelector('#axe')
+let toolsArr = [{toolsName: 'axe' , bool: false},{toolsName: 'pickaxe' , bool: false},{toolsName: 'shovel' , bool: false}]
 
 // console.log(resett);
 let arrayRemoves = []
@@ -28,6 +30,7 @@ function main(currentTime){
 
 window.requestAnimationFrame(main)
 
+
 function update(){
     gameBoard.innerHTML = ''
     updateRock(gameBoard)
@@ -36,13 +39,12 @@ function update(){
 
 function draw(){
     gameBoard.innerHTML = ''
-    drawGround(gameBoard)
-    drawTree(gameBoard)
-    drawTrunk(gameBoard)
-    drawRock(gameBoard, arrayRemoves)
+    drawGround(gameBoard, arrayRemoves, toolsArr)
+    drawTree(gameBoard, arrayRemoves, toolsArr)
+    drawTrunk(gameBoard, arrayRemoves, toolsArr)
+    drawRock(gameBoard, arrayRemoves, toolsArr)
     drawMoon(gameBoard)
 }
-
 const resett = document.querySelector('input')
 resett.addEventListener('click', () => {
     location.reload();
