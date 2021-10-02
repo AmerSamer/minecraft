@@ -25,9 +25,7 @@ export function draw(gameBoard, arrayRemoves, toolsArr) {
         let rockUpdate = rockElement
 
         rockUpdate.addEventListener('click', () => {
-            console.log('ggg');
             if (toolsArr[0].bool) {
-
                 arrayRemoves.unshift(rockUpdate.getAttribute('class'))
                 rockUpdate.remove()
                 let store = document.querySelector('#store')

@@ -35,7 +35,7 @@ body{
     border: rgb(15, 4, 83) 3px solid;
 }
 #pickaxe{
-    background: url('./images/axe.png') no-repeat center ;
+    background: url('./images/axe.png') no-repeat center  ;
     height: 15vmin;
     width: 15vmin;
     margin: 20% 32%;
@@ -45,7 +45,7 @@ body{
     border: rgb(15, 4, 83) 3px solid;
 }
 #shovel{
-    background: url('./images/shovel.png') no-repeat center ;
+    background: url('./images/shovel.png') no-repeat center;
     height: 15vmin;
     width: 15vmin;
     margin: 20% 32%;
